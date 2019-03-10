@@ -1,21 +1,51 @@
 <script>
 export default {
-  name: 'VueShinyButton'
+  name: 'VueShinyButton',
+  mounted () {
+    navigator.mediaDevices.getUserMedia(
+      { video: true, audio: false }
+    )
+    .then(stream => {
+      this.$refs.reflection.srcObject = stream
+      this.$refs.reflection.play()
+    })
+    .catch(e => {
+      // eslint-disable-next-line
+      console.error(e)
+    })
+  },
 }
 </script>
 
 <template>
   <button @click="$emit('click')">
     <slot>Button text</slot>
+    <video ref="reflection" />
   </button>
 </template>
 
 <style scoped>
+video {
+  transform: rotate(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.15;
+}
+
 button {
   font: inherit;
+  font-size: 24px;
+  position: relative;
+  width: fit-content;
   cursor: pointer;
-  line-height: 46px;
-  padding: 0 24px;
+  line-height: 66px;
+  padding: 0 44px;
   color: #fff;
   text-shadow: 0 1px #154c86;
   background-color: #247edd;
@@ -31,7 +61,9 @@ button {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
 }
 
-button:hover { background-color: #1a74d3; }
+button:hover {
+  background-color: #1a74d3;
+}
 
 button:active {
   color: rgba(255, 255, 255, 0.9);

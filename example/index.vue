@@ -17,14 +17,18 @@ export default {
 
 <template>
   <div id="example">
-    <VueShinyButton @click="handleClick" type="button" />
+    <VueShinyButton
+      type="button"
+      @click="handleClick"
+    >
+      vue-shiny-button
+    </VueShinyButton>
   </div>
 </template>
 
 <style scoped>
 #example {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 17px;
   position: fixed;
   top: 0;
   left: 0;

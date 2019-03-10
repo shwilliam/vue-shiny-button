@@ -1,7 +1,16 @@
 {
   "name": "vue-shiny-button",
   "version": "0.1.0",
-  "description": "",
+  "description": "Extremely shiny button for Vuejs",
+  "keywords": [
+    "vue",
+    "component",
+    "button",
+    "shiny",
+    "reflection",
+    "video",
+    "camera"
+  ],
   "license": "MIT",
   "main": "dist/vue-shiny-button.umd.js",
   "module": "dist/vue-shiny-button.esm.js",

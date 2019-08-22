@@ -26,7 +26,6 @@ export default {
 
 <style scoped>
 video {
-  transform: rotate(180deg);
   position: absolute;
   top: 0;
   left: 0;
@@ -34,8 +33,9 @@ video {
   bottom: 0;
   height: 100%;
   width: 100%;
-  object-fit: fill;
+  transform: scale(-1, 1);
   opacity: 0.15;
+  object-fit: fill;
 }
 
 button {
